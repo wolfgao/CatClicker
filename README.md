@@ -47,4 +47,5 @@ or
   var catNameElem = $('<ul style="width=30%;"><li><span id="'+catName[i]+'">'+catName[i]+'</span></li></ul>');
   $("#catlist").append(catNameElem);
  ```
- 
+3. 在moreCats.html 和moreCats.js文件中我们联系了MVO模式开发，O是指Octopus，实际上也有叫做MVC，C是Controller，或者MVP，P是Prensenter. 无论如何，这样来组织代码，把View和Model分开，never talk使得我们的代码非常松耦合，很容易面对需求的变化，实现新功能。请仔细阅读一下moreCats.js仔细体会一下这样分开的妙处。
+
