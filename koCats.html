@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="js/libs/knockout-3.4.2.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+    	.span{font-weight:bold;font-size:200%;}
+    	.img_container{
+    		width: 60%
+    	}
+    	.catlist{
+    		width: 40%
+    	}
+    	div{float: left}
+    </style>
+    <title>Cat Clicker</title>
+</head>
+
+<body>
+	<h2 id="greeting" align="center">If you like one of them, please click them!!!</h2>
+
+	<div class="catshow" id="cat_container" align="center">
+		<div data-bind="foreach: catList" style="width:30%">
+			<li>
+				<span data-bind="text: name, click: $parent.loadCat($data)"></span>
+				<br>
+			</li>
+		</div>
+		<div id="img_container" data-bind="with: currentCat" style="width:60%;">
+			<span data-bind="text: name"></span>  
+			<span data-bind="text: clickCount"></span>  Level is:
+			<span data-bind="text: title"></span>
+			<img data-bind="click: $parent.incrementClickCounters, attr: {src: imgSrc}"></img>
+			<div data-bind="foreach: nickNames">
+				<li>
+					<span data-bind="text: $data"></span>
+					<br>
+				</li>
+			</div>
+		</div>
+	</div>
+</body>
+	<script src="js/libs/jquery.min.js"></script>
+	<script src="js/koCats.js"></script>
+</html>
+
